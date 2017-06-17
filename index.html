@@ -15,8 +15,13 @@
     </div>
 
     <form name="form" ng-submit="vm.addTask()">
-        <input type="text" name="textIntput" placeholder="Enter Name Task" ng-model='vm.text' ng-minlength="3" ng-maxlength="10"
-            required autofocus>
+        <div class="dx-fieldset">    
+                <div class="dx-field">
+                    <div class="dx-field-label">Name Task</div>
+                    <div class="dx-field-value">
+                        <div dx-text-box="vm.textOptions"></div>
+                    </div>
+                </div>    
         <input type="submit" value="Submit">
 
     </form>
