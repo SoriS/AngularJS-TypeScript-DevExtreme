@@ -1,0 +1,17 @@
+{
+    "name": "todo-angularjs-typescript-devextreme",
+    "version": "0.0.1",
+    "main": "webpack.config.js",
+    "scripts": {
+        "myrun": "tsc && webpack"
+    },
+    "dependencies": {
+        "angular": "^1.6.0",
+        "jquery":"^3.2.1",
+        "@types/angular": "1.6.4",
+        "@types/devextreme": "^16.2.1",
+        "typescript": "^2.3.4",
+        "devextreme": "^17.1.3"
+    }
+
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="appDev">
+
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="node_modules/devextreme/dist/css/dx.common.css">
+    <link rel="stylesheet" href="node_modules/devextreme/dist/css/dx.spa.css">
+    <link rel="stylesheet" href="node_modules/devextreme/dist/css/dx.light.css">
+</head>
+
+<body class="containter" ng-controller="controllerDev as vm">
+
+    <div class="title">
+        <h1>TODOS</h1>
+    </div>
+
+    <form name="form" ng-submit="vm.addTask()">
+        <input type="text" name="textIntput" placeholder="Enter Name Task" ng-model='vm.text' ng-minlength="3" ng-maxlength="10"
+            required autofocus>
+        <input type="submit" value="Submit">
+
+    </form>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-8">
+            <div class="dx-viewport">
+
+                <div id="gridContainer" dx-data-grid="vm.dataGridOptions"></div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="bundle.js"></script>
+</body>
+
+</html>
