@@ -6,7 +6,8 @@
         "allowJs": true,
         "alwaysStrict": true,
         "noImplicitAny": false,
-        "outDir": "src" 
+        "outDir": "src"
+        
     },
     "include": [
         "tssrc/*"

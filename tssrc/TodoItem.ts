@@ -1,11 +1,11 @@
 export class TodoItem {
     constructor(
         nameTask: string,
-        completed: boolean,
+        completed?: boolean,
         dateCreate?: Date
     ) {
         this.nameTask = nameTask
-        this.completed = completed;
+        this.completed = completed || false;
         this.dateCreate = dateCreate || new Date();
     }
     nameTask: string

@@ -13,33 +13,29 @@
     <div class="title">
         <h1>TODOS</h1>
     </div>
-
-    <form name="form" ng-submit="vm.addTask()">
-        <div class="dx-fieldset">    
-                <div class="dx-field">
-                    <div class="dx-field-label">Name Task</div>
-                    <div class="dx-field-value">
-                        <div dx-text-box="vm.textOptions"></div>
-                    </div>
-                </div>    
-        <input type="submit" value="Submit">
-
-    </form>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-8">
-            <div class="dx-viewport">
-
-                <div id="gridContainer" dx-data-grid="vm.dataGridOptions"></div>
-
+    <div class="dx-fieldset">
+        <div class="dx-field">
+            <div class="dx-field-label">Name Task</div>
+            <div class="dx-field-value">
+                <div dx-text-box="vm.textOptions"></div>
             </div>
         </div>
-    </div>
+        <div dx-button="vm.buttonOptions"></div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+                <div class="dx-viewport">
+
+                    <div id="gridContainer" dx-data-grid="vm.dataGridOptions"></div>
+
+                </div>
+            </div>
+        </div>
 
 
 
 
-    <script src="bundle.js"></script>
+        <script src="bundle.js"></script>
 </body>
 
 </html>

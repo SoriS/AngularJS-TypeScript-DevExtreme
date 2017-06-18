@@ -1,21 +1,28 @@
+
+
 import { TodoItem } from "./TodoItem";
 
 export class ControllerDev {
 
+     
     dataTodoItem: TodoItem[] = [{
         "nameTask": "Test1",
         "completed": false,
         "dateCreate": new Date()
     }];
-    text:string = ""
-
+    text: string = ""
     dataGridOptions = {
-
         columns: [
             "nameTask",
             {
                 dataField: "completed",
-                dataType: 'string'
+                dataType: "boolean",
+                editorOptions: {
+                    activeStateEnable: true,
+                    disabled: false,
+                    readOnly: false
+                }
+
             },
             {
                 dataField: "dateCreate",
@@ -34,7 +41,7 @@ export class ControllerDev {
 
     }
     textOptions = {
-        mode:'text',
+        mode: 'text',
         showClearButton: true,
         placeholder: "Enter name task here...",
         onEnterKey: true,
@@ -43,14 +50,25 @@ export class ControllerDev {
             value: 'vm.text'
         }
     }
-    addTask(): void {
-        var newTodo: string = this.text
-        if (!newTodo.length) {
-            return;
+    buttonOptions = {
+        text: 'Submit Task',
+        hint: 'Submit',
+        type: 'default',
+        icon: 'add',
+        onClick: this.addTask()
+    }
+    static self: ControllerDev = null;
+    addTask(): any {
+        return () => {
+            var newTodo: string = this.text;
+            if (!newTodo.length) {
+                return;
+            }
+            this.dataTodoItem.push(new TodoItem(newTodo))
+            this.text = "";
+            console.log(this.dataTodoItem)
         }
-        this.dataTodoItem.push(new TodoItem(newTodo, false))
-        this.text = "";
-        console.log(this.dataTodoItem)
+
     }
 
 }
